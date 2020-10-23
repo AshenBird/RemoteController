@@ -1,5 +1,7 @@
 # RemoteController
 
+node 版有点蛋疼，没啥实际意义
+
 ## Installation
 
 ### 环境依赖
