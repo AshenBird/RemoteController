@@ -1,12 +1,25 @@
 package main
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/go-vgo/robotgo"
+	"github.com/gorilla/websocket"
 )
 
 func test() {
 	robotgo.MoveMouse(50, 50)
+}
+
+var upgrader = websocket.Upgrader{
+	ReadBufferSize:  1024,
+	WriteBufferSize: 1024,
+	CheckOrigin:     checkOrigin,
+}
+
+func checkOrigin(r *http.Request) bool {
+	return true
 }
 
 func main() {
