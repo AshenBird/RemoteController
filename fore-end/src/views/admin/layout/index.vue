@@ -1,35 +1,8 @@
 <template>
   <ALayout id="components-layout-demo-custom-trigger">
-    <ALayoutSider v-model:collapsed="collapsed" :trigger="null" collapsible>
-      <div class="logo" />
-      <AMenu theme="dark" mode="inline" v-model:selectedKeys="selectedKeys">
-        <AMenuItem key="1">
-          <UserOutlined />
-          <span>nav 1</span>
-        </AMenuItem>
-        <AMenuItem key="2">
-          <VideoCameraOutlined />
-          <span>nav 2</span>
-        </AMenuItem>
-        <AMenuItem key="3">
-          <UploadOutlined />
-          <span>nav 3</span>
-        </AMenuItem>
-      </AMenu>
-    </ALayoutSider>
+    <Sidebar></Sidebar>
     <ALayout>
-      <ALayoutHeader style="background: #fff; padding: 10px 15px">
-        <MenuUnfoldOutlined
-          v-if="collapsed"
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
-        <MenuFoldOutlined
-          v-else
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
-      </ALayoutHeader>
+      <Header></Header>
       <ALayoutContent
         :style="{
           margin: '24px 16px',
@@ -38,33 +11,19 @@
           minHeight: '280px'
         }"
       >
-        Content
+        <RouterView></RouterView>
       </ALayoutContent>
     </ALayout>
   </ALayout>
 </template>
 <script>
-import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined
-} from "@ant-design/icons-vue";
+import Sidebar from "./Sidebar/index";
+import Header from "./header";
 
 export default {
   components: {
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    MenuUnfoldOutlined,
-    MenuFoldOutlined
-  },
-  data() {
-    return {
-      selectedKeys: ["1"],
-      collapsed: false
-    };
+    Sidebar,
+    Header
   }
 };
 </script>
