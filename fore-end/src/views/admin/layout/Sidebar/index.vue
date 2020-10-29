@@ -1,12 +1,16 @@
 <template>
-  <ALayoutSider
+  <a-layout-sider
     :collapsed="collapsed"
-    @update:collapsed="onCollapsed"
     :trigger="null"
+    @updated:collapsed="onCollapsed"
     collapsible
   >
     <div class="logo" />
-    <AMenu theme="dark" mode="inline" v-model:selectedKeys="selectedKeys">
+    <AMenu
+      theme="dark"
+      mode="vertical-right"
+      v-model:selectedKeys="selectedKeys"
+    >
       <AMenuItem key="1">
         <UserOutlined />
         <span>nav 1</span>
@@ -20,7 +24,7 @@
         <span>nav 3</span>
       </AMenuItem>
     </AMenu>
-  </ALayoutSider>
+  </a-layout-sider>
 </template>
 <script>
 import {
@@ -28,8 +32,7 @@ import {
   VideoCameraOutlined,
   UploadOutlined
 } from "@ant-design/icons-vue";
-// import { route2menu } from "./utils";
-// import { staticRoutes } from "@/router/admin/index";
+import { route2menu } from "./utils";
 export default {
   components: {
     UserOutlined,
@@ -42,17 +45,20 @@ export default {
     };
   },
   computed: {
-    // menuLits() {
-    //   return route2menu(staticRoutes);
-    // },
     collapsed() {
       return this.$store.getters.collapsed;
+    },
+    menuList() {
+      return route2menu(this.$store.getters.routes);
     }
   },
   methods: {
     onCollapsed(status) {
       this.$store.dispatch("SidebarCollapse", { status });
     }
+  },
+  mounted() {
+    console.log(this.menuList);
   }
 };
 </script>

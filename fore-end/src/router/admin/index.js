@@ -1,16 +1,22 @@
 import { createRouter, createWebHistory } from "vue-router";
+import store from "@/store/admin";
 const DASHBORAD = "Dashborad";
 
-export const staticRoutes = [
+const staticRoutes = [
   {
     path: "dashborad",
     name: DASHBORAD,
     component: () =>
       import(
         /* webpackChunkName: "Admin" */ "@/views/admin/pages/dashborad.vue"
-      )
+      ),
+    meta: {
+      icon: () => import("@ant-design/icons-vue").UserOutlined
+    }
   }
 ];
+
+store.dispatch("UpdateRoutes", staticRoutes);
 
 const routes = [
   {

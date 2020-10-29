@@ -2,6 +2,10 @@
   <router-view id="app" />
 </template>
 <style lang="scss">
+body {
+  height: 100vh;
+  width: 100vw;
+}
 #app {
   height: 100%;
   overflow: hidden;
