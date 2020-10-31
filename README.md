@@ -29,5 +29,11 @@
 ## 运行
 
 ```shell
-username: /path/to/项目目录$ go run ./cmd/main.go
+go run ./server/cmd/main.go
+```
+
+or
+
+```shell
+npm run server
 ```
