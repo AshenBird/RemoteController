@@ -1,0 +1,11 @@
+{
+  "name": "RemoteController",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AshenBird/RemoteController.git",
+  "author": "mcswift <develop@mcswift.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev":"go run ./cmd/main.go"
+  }
+}
