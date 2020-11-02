@@ -1,16 +1,34 @@
 // 用于按需构建入口
 let pages = {};
+const admin = {
+  entry: "src/admin-entry.js",
+  template: "public/index.html",
+  title: "Admin",
+  filename: "admin.html"
+};
+const mobile = {
+  entry: "src/mobile-entry.js",
+  template: "public/index.html",
+  title: "mobile",
+  filename: "mobile.html"
+};
 if (process.argv.some(arg => arg === "--client:admin")) {
-  pages.admin = "src/admin-entry.js";
+  pages = { admin };
 } else if (process.argv.some(arg => arg === "--client:mobile")) {
-  pages.mobile = "src/mobile-entry.js";
+  pages = { mobile };
 } else {
   pages = {
-    admin: "src/admin-entry.js",
-    mobile: "src/mobile-entry.js"
+    admin,
+    mobile
   };
 }
+
+const devServer = {
+  host: "0.0.0.0"
+};
+
 // piu>>=))==))==))==))==))
 module.exports = {
-  pages
+  pages,
+  devServer
 };

@@ -1,10 +1,14 @@
 <template>
-  <router-view id="app" />
+  <router-view />
 </template>
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 body {
   height: 100vh;
   width: 100vw;
+  margin: 0;
 }
 #app {
   height: 100%;

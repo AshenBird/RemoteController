@@ -56,3 +56,8 @@ yarn lint
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## 比较重要的依赖
+
+[node-qrcode: 通用的 js 二维码生成包](https://github.com/soldair/node-qrcode)
+[jsQr: 一个 js 二维码识别包](https://github.com/cozmo/jsQR#readme)
