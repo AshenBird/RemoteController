@@ -1,5 +1,16 @@
+
+const { resolve: r } = require("path")
+
+const resolve = (path) => r(__dirname, path);
+
+const options = {
+  outputDir: resolve('../release/www'),
+  devServer: {
+    host: "0.0.0.0"
+  }
+}
+
 // 用于按需构建入口
-let pages = {};
 const admin = {
   entry: "src/admin-entry.js",
   template: "public/index.html",
@@ -13,22 +24,16 @@ const mobile = {
   filename: "mobile.html"
 };
 if (process.argv.some(arg => arg === "--client:admin")) {
-  pages = { admin };
+  options.pages = { admin };
 } else if (process.argv.some(arg => arg === "--client:mobile")) {
-  pages = { mobile };
+  options.pages = { mobile };
 } else {
-  pages = {
+  options.pages = {
     admin,
     mobile
   };
 }
 
-const devServer = {
-  host: "0.0.0.0"
-};
 
 // piu>>=))==))==))==))==))
-module.exports = {
-  pages,
-  devServer
-};
+module.exports = options;
