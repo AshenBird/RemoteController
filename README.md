@@ -32,6 +32,12 @@
 username: /path/to/项目目录$ go run ./cmd/
 ```
 
+or
+
+```shell
+npm run server
+```
+
 ### 关于websocket 的一些说明
 
 1. 新增一个web页面，启动服务后，访问 ` /page `页面可以看到一个聊天框。该聊天框会自动建立 ws 服务

@@ -6,6 +6,6 @@
   "author": "mcswift <develop@mcswift.com>",
   "license": "MIT",
   "scripts": {
-    "dev":"go run ./cmd/main.go"
+    "server":"go run ./server/cmd/main.go"
   }
 }
