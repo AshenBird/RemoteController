@@ -2,8 +2,20 @@ import { createRouter, createWebHistory } from "vue-router";
 import store from "@/store/admin";
 import { iconLoader } from "../../utils/antd";
 const DASHBORAD = "Dashborad";
-
+const PREVIEW = "Preview";
 const staticRoutes = [
+  {
+    path: "preview",
+    name: PREVIEW,
+    component: () =>
+      import(/* webpackChunkName: "Admin" */ "@/views/admin/pages/preview.vue"),
+    meta: {
+      title: "首页",
+      sidebar: {
+        icon: iconLoader("HomeOutlined")
+      }
+    }
+  },
   {
     path: "dashborad",
     name: DASHBORAD,
@@ -14,54 +26,7 @@ const staticRoutes = [
     meta: {
       title: "Dashborad",
       sidebar: {
-        icon: iconLoader("UserOutlined")
-      }
-    },
-    children: [
-      {
-        path: "dashborad3",
-        name: DASHBORAD + 3,
-        component: () =>
-          import(
-            /* webpackChunkName: "Admin" */ "@/views/admin/pages/dashborad.vue"
-          ),
-        meta: {
-          title: "Dashborad3",
-          sidebar: {
-            icon: iconLoader("UserOutlined")
-          }
-        }
-      },
-      {
-        path: "dashborad4",
-        name: DASHBORAD + 4,
-        component: () =>
-          import(
-            /* webpackChunkName: "Admin" */ "@/views/admin/pages/dashborad.vue"
-          ),
-        meta: {
-          title: "Dashborad4",
-          sidebar: {
-            icon: iconLoader("UserOutlined")
-          }
-        }
-      }
-    ]
-  },
-  {
-    path: "dashborad2/:id",
-    name: DASHBORAD + 2,
-    component: () =>
-      import(
-        /* webpackChunkName: "Admin" */ "@/views/admin/pages/dashborad.vue"
-      ),
-    meta: {
-      title: "Dashborad2",
-      sidebar: {
-        icon: iconLoader("UserOutlined"),
-        params: {
-          id: 2
-        }
+        icon: iconLoader("DashboardOutlined")
       }
     }
   }
@@ -78,7 +43,7 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "Admin" */ "@/views/admin/layout/index.vue"),
-    redirect: { name: staticRoutes[0].name },
+    // redirect: { name: staticRoutes[0].name },
     children: staticRoutes
   }
 ];

@@ -1,14 +1,13 @@
+const { resolve: r } = require("path");
 
-const { resolve: r } = require("path")
-
-const resolve = (path) => r(__dirname, path);
+const resolve = path => r(__dirname, path);
 
 const options = {
-  outputDir: resolve('../release/www'),
+  outputDir: resolve("../release/www"),
   devServer: {
     host: "0.0.0.0"
   }
-}
+};
 
 // 用于按需构建入口
 const admin = {
@@ -33,7 +32,6 @@ if (process.argv.some(arg => arg === "--client:admin")) {
     mobile
   };
 }
-
 
 // piu>>=))==))==))==))==))
 module.exports = options;
