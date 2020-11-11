@@ -71,7 +71,7 @@ store.dispatch("UpdateRoutes", staticRoutes);
 
 const routes = [
   {
-    path: "/admin",
+    path: "/",
     name: "Admin",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
