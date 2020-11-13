@@ -1,10 +1,10 @@
 import { isEmpty } from "@/utils/base";
 // import qs from "qs";
 const route2menuItem = (
-  { path = "", name, redirect = "", meta, children },
+  { path = "", name, redirect = "", meta = {}, children },
   fPath = "/admin"
 ) => {
-  const { sidebar, title = "" } = meta;
+  const { sidebar = {}, title = "" } = meta;
   const { icon = null, params, query } = sidebar;
   const item = {
     path: path.startsWith("/") ? path : `${fPath}/${path}`,

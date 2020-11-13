@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["dashborad"],{5482:function(n,r,a){"use strict";a.r(r);var d=a("5c40");function e(n,r,a,e,o,c){return Object(d["Z"])(),Object(d["o"])("div",null," dashborad ")}var o={};o.render=e;r["default"]=o}}]);
+//# sourceMappingURL=dashborad.645df0fb.js.map

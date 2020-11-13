@@ -7,6 +7,8 @@
     "serve:admin": "vue-cli-service serve --client:admin",
     "serve:mobile": "vue-cli-service serve --client:mobile",
     "build": "vue-cli-service build",
+    "build:admin": "vue-cli-service build --client:admin",
+    "build:mobile": "vue-cli-service build --client:mobile",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
