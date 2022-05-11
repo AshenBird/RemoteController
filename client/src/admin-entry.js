@@ -4,7 +4,7 @@ import register from "./registerServiceWorker";
 import router from "./router/admin";
 import store from "./store/admin";
 import componentRegister from "./plugins/component-register";
-// import socket from "./plugins/socket";
+import socket from "./plugins/socket";
 import components from "./components/admin";
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
@@ -15,5 +15,7 @@ createApp(App)
   .use(router)
   .use(Antd)
   .use(componentRegister, components)
-  // .use(socket)
+  .use(socket, {
+    url: process.env.VUE_APP_SOCKET_HOST || window.location
+  })
   .mount("#app");
